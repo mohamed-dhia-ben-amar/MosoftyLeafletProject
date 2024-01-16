@@ -31,7 +31,7 @@ class _AddProjectState extends State<AddProject> {
     return response;
   }
 
-  final _formKey = GlobalKey<FormState>();
+  final _formKey2 = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class _AddProjectState extends State<AddProject> {
 
     return Scaffold(
       body: Form(
-        key: _formKey,
+        key: _formKey2,
         child: Column(
           children: <Widget>[
             TextFormField(
@@ -136,7 +136,7 @@ class _AddProjectState extends State<AddProject> {
                 Center(
                   child: ElevatedButton(
                       onPressed: () async {
-                        if (_formKey.currentState!.validate()) {
+                        if (_formKey2.currentState!.validate()) {
                           final response = await _addProject(_nomCtrl.text,
                               _descCtrl.text, _lattCtrl.text, _longCtrl.text);
                           switch (response.statusCode) {
@@ -151,7 +151,8 @@ class _AddProjectState extends State<AddProject> {
                                     actions: [
                                       TextButton(
                                         onPressed: () {
-                                          Navigator.pushNamed(context, '/');
+                                          Navigator.pushNamed(
+                                              context, '/ListProjects');
                                         },
                                         child: Text('OK'),
                                       ),

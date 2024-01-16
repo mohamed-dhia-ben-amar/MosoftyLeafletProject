@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:leafletproject/AddPhone.dart';
 import 'package:leafletproject/AddProject.dart';
+import 'package:leafletproject/AssignPhone.dart';
+import 'package:leafletproject/EditPhone.dart';
+import 'package:leafletproject/ListPhones.dart';
 import 'package:leafletproject/ListProject.dart';
 
 void main() {
@@ -75,8 +79,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
       title: 'Mosofty',
       routes: {
-        '/': (context) => ListProjects(),
+        '/ListProjects': (context) => ListProjects(),
         '/addProject': (context) => AddProject(),
+        '/': (context) => ListPhones(),
+        '/addPhone': (context) => AddPhone(),
+        '/editPhone': (context) => EditPhone(),
+        '/assignPhone': (context) => AssignPhoneToUser()
       },
     );
   }
